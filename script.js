@@ -23,6 +23,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Add fun entrance animations and interactive elements
 document.addEventListener('DOMContentLoaded', function() {
+    // Header scroll hide/show functionality (especially for mobile)
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const header = document.querySelector('header');
+
+    function updateHeader() {
+        const currentScrollY = window.scrollY;
+        const scrollThreshold = 50; // Start hiding after scrolling 50px
+        
+        if (header) {
+            // Always show header at the top
+            if (currentScrollY < scrollThreshold) {
+                header.classList.remove('header-hidden');
+                header.classList.remove('header-visible');
+                lastScrollY = currentScrollY;
+                ticking = false;
+                return;
+            }
+            
+            // Hide header when scrolling down, show when scrolling up
+            if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
+                // Scrolling down - hide header
+                header.classList.add('header-hidden');
+                header.classList.remove('header-visible');
+            } else if (currentScrollY < lastScrollY) {
+                // Scrolling up - show header
+                header.classList.remove('header-hidden');
+                header.classList.add('header-visible');
+            }
+        }
+        
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }
+
+    // Add scroll listener for header hide/show (works on all devices, optimized for mobile)
+    if (header) {
+        window.addEventListener('scroll', requestTick, { passive: true });
+    }
     // Animate elements on scroll
     const observerOptions = {
         threshold: 0.1,
