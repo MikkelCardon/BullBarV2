@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bull Bar - Copenhagen's Premier Dart Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BULL BAR</h1>
+                <span class="tagline">EST. 2024</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#location">Location</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">BULL BAR</h2>
+                    <div class="hero-divider"></div>
+                    <p class="hero-subtitle">Copenhagen's Most Exclusive Dart Experience</p>
+                    <p class="hero-description">Where precision meets premium</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Membership & Rates</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Weekday</h3>
+                        <div class="price">200 DKK<span>/hour</span></div>
+                        <p>Sunday - Thursday</p>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>Weekend</h3>
+                        <div class="price">300 DKK<span>/hour</span></div>
+                        <p>Friday - Saturday</p>
+                    </div>
+                    <!--
+                    
+                    <div class="pricing-card">
+                        <h3>Group Rate</h3>
+                        <div class="price">120 DKK<span>/hour</span></div>
+                        <p>5+ people</p>
+                    </div>
+                    -->
+                </div>
+                <div class="pricing-button-container">
+                    <a href="mailto:info@bullbar.dk?subject=Book%20Dart%20Time" class="book-button">Book Time</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="games" class="games">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Games</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-btn-prev" aria-label="Previous game">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <div class="game-card">
+                                    <h3 class="game-title">501</h3>
+                                    <div class="game-image-container">
+                                        <img src="images/game_501.avif" alt="501 Dart Game" class="game-image">
+                                    </div>
+                                    <p class="game-description">Shoot your way to zero. Classic dart game with double-out option.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="game-card">
+                                    <h3 class="game-title">Conqueror</h3>
+                                    <div class="game-image-container">
+                                        <img src="images/game_conqueror.avif" alt="Conqueror Dart Game" class="game-image">
+                                    </div>
+                                    <p class="game-description">Claim territories and dominate the board in this strategic game.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="game-card">
+                                    <h3 class="game-title">Football</h3>
+                                    <div class="game-image-container">
+                                        <img src="images/game_football.avif" alt="Football Dart Game" class="game-image">
+                                    </div>
+                                    <p class="game-description">Score goals by hitting targets on your attacking side.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="game-card">
+                                    <h3 class="game-title">Golf</h3>
+                                    <div class="game-image-container">
+                                        <img src="images/game_golf.avif" alt="Golf Dart Game" class="game-image">
+                                    </div>
+                                    <p class="game-description">Navigate rebounds and obstacles in this mini golf-inspired challenge.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" aria-label="Next game">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button class="carousel-indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                        <button class="carousel-indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                        <button class="carousel-indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                        <button class="carousel-indicator" data-slide="3" aria-label="Go to slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Curated Selection</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-category">
+                        <h3>Draft Selection</h3>
+                        <p class="category-subtitle">Premium Craft & Classic</p>
+                        <ul>
+                            <li>
+                                <span class="item-name">Carlsberg</span>
+                                <span class="item-price">45 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Tuborg</span>
+                                <span class="item-price">45 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">IPA Selection</span>
+                                <span class="item-price">55 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Wheat Beer</span>
+                                <span class="item-price">50 DKK</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-category">
+                        <h3>Bottled Collection</h3>
+                        <p class="category-subtitle">International & Local</p>
+                        <ul>
+                            <li>
+                                <span class="item-name">Heineken</span>
+                                <span class="item-price">40 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Corona</span>
+                                <span class="item-price">45 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Craft Beer Selection</span>
+                                <span class="item-price">60 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Non-Alcoholic Beer</span>
+                                <span class="item-price">35 DKK</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-category">
+                        <h3>Premium Spirits</h3>
+                        <p class="category-subtitle">Cocktails & Fine Wines</p>
+                        <ul>
+                            <li>
+                                <span class="item-name">Soft Drinks</span>
+                                <span class="item-price">25 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Wine (glass)</span>
+                                <span class="item-price">50 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Cocktails</span>
+                                <span class="item-price">80 DKK</span>
+                            </li>
+                            <li>
+                                <span class="item-name">Coffee</span>
+                                <span class="item-price">30 DKK</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="location">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Visit Us</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <p class="location-subtitle">Located in the heart of Copenhagen</p>
+                <div class="map-container">
+                    <iframe 
+                        id="map-iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.486954932629!2d12.5683672!3d55.6760968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652533c37c90227%3A0x8020bf214b0d5fa0!2sCopenhagen%2C%20Denmark!5e0!3m2!1sen!2sdk!4v1234567890123!5m2!1sen!2sdk"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-overlay" onclick="openGoogleMaps()">
+                        <div class="map-overlay-content">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <p>View on Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BULL BAR</h3>
+                    <p class="footer-tagline">Copenhagen's Most Exclusive Dart Experience</p>
+                    <p class="footer-est">Established 2024</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p class="footer-contact">Copenhagen, Denmark</p>
+                    <p class="footer-contact">+45 XX XX XX XX</p>
+                    <p class="footer-contact">info@bullbar.dk</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p class="footer-hours">Monday - Thursday<br>16:00 - 00:00</p>
+                    <p class="footer-hours">Friday - Saturday<br>14:00 - 02:00</p>
+                    <p class="footer-hours">Sunday<br>14:00 - 22:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bull Bar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
