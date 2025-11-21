@@ -21,8 +21,63 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add click event to map iframe container
+// Add fun entrance animations and interactive elements
 document.addEventListener('DOMContentLoaded', function() {
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe pricing cards
+    document.querySelectorAll('.pricing-card').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // Observe menu categories
+    document.querySelectorAll('.menu-category').forEach((category, index) => {
+        category.style.opacity = '0';
+        category.style.transform = 'translateY(30px)';
+        category.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(category);
+    });
+
+    // Add hover bounce to buttons
+    document.querySelectorAll('.book-button').forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.05)';
+        });
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Add fun cursor effect for cards
+    document.querySelectorAll('.pricing-card, .menu-category, .game-card').forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            this.style.setProperty('--mouse-x', `${x}px`);
+            this.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+
+    // Map container functionality
     const mapContainer = document.querySelector('.map-container');
     const mapOverlay = document.querySelector('.map-overlay');
     
@@ -58,17 +113,28 @@ function initCarousel() {
     const totalSlides = slides.length;
     let autoPlayInterval;
 
-    // Function to show a specific slide
+    // Function to show a specific slide with smooth transition
     function showSlide(index) {
         // Remove active class from all slides and indicators
-        slides.forEach(slide => slide.classList.remove('active'));
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+            slide.style.opacity = '0';
+        });
         indicators.forEach(indicator => indicator.classList.remove('active'));
 
-        // Add active class to current slide and indicator
-        slides[index].classList.add('active');
-        if (indicators[index]) {
-            indicators[index].classList.add('active');
-        }
+        // Add active class to current slide and indicator with fade effect
+        setTimeout(() => {
+            slides[index].classList.add('active');
+            slides[index].style.opacity = '1';
+            if (indicators[index]) {
+                indicators[index].classList.add('active');
+                // Fun bounce effect
+                indicators[index].style.transform = 'scale(1.4)';
+                setTimeout(() => {
+                    indicators[index].style.transform = 'scale(1.3)';
+                }, 200);
+            }
+        }, 50);
 
         currentSlide = index;
     }
@@ -110,7 +176,7 @@ function initCarousel() {
 
     // Auto-play functionality
     function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        autoPlayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds - faster pace
     }
 
     function stopAutoPlay() {
